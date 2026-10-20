@@ -1,0 +1,17 @@
+# Local preferences and machine-specific shortcuts
+preferencias.json
+*.lnk
+
+# Runtime state, logs and generated test artifacts
+*.log
+*-resume.json
+*preferences-test.json
+*-preview*.png
+work/
+tmp/
+
+# Editors and operating system
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

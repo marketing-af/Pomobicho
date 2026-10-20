@@ -1,0 +1,78 @@
+﻿POMOBICHO
+
+Abra "Abrir Pomobicho.vbs" com dois cliques.
+O gatinho aparece no canto inferior direito, acima das janelas comuns.
+Requer Windows com Windows PowerShell 5.1 e WPF (incluidos no Windows).
+Nao precisa instalar pacotes nem acessar a internet.
+
+CONTROLES
+- Arraste pela cabeca ou pelas patinhas para mover.
+- Iniciar / Pausar / Retomar: controla o timer.
+- Seta circular: reinicia o periodo atual.
+- Engrenagem: configura foco, pausa, tamanho e som. O tamanho muda ao vivo.
+- Ctrl + rodinha do mouse: aumenta ou diminui o tamanho, apontando para o gato.
+- Clique direito: tamanho, configuracoes, foco, pausa ou fechar.
+
+O foco comeca com 30 minutos e a pausa com 5 minutos.
+O tamanho inicial e 55%. Pode variar de 35% a 150%.
+As preferencias e a posicao ficam salvas em preferencias.json nesta pasta.
+Alterar a duracao durante um timer em andamento ou pausado vale para
+o proximo periodo. Para aplicar imediatamente, use a seta de reiniciar.
+A contagem inclui o tempo em suspensao; o aviso ocorre ao voltar.
+Ao fechar o bichinho, o timer e a contagem da sessao sao descartados.
+O som segue o esquema de sons do Windows e pode estar silenciado.
+O texto do periodo pisca ao concluir, mesmo com o som desligado.
+Janelas de seguranca e alguns aplicativos em tela cheia podem cobri-lo.
+
+Nao e iniciado com o Windows automaticamente.
+Mantenha os arquivos juntos. Para remover, feche o bichinho e exclua a pasta.
+
+Alternativa se arquivos VBS estiverem desabilitados:
+Abra o PowerShell nesta pasta e execute:
+powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\Pomobicho.ps1
+
+ARTE
+Arquivo: gatinho-laco.png
+Editado com a ferramenta integrada ImageGen, a partir do print fornecido.
+Prompt: remover o fundo branco e a borda; preservar o gatinho cinza,
+o laco rosa, a pose, as proporcoes e o estilo; fundo transparente.
+
+TEMAS
+Na engrenagem, escolha Escuro, Claro, Rosa ou Lavanda no campo Tema.
+Tambem pode usar clique direito > Tema. A troca e imediata, fica salva
+e nao interrompe o timer. Muda as cores do painel e das configuracoes.
+
+POPUP DE CONFIGURACOES
+A engrenagem abre um popup sem moldura, acima das janelas e fora da barra
+de tarefas. Arraste pelo titulo. Feche pelo X ou pela tecla Esc.
+Se o Komorebi estiver ativo, o app tenta registrar uma regra ignore-rule somente
+para Pomobicho | Configurações antes de abrir o popup. A tentativa e repetida
+a abertura; nao e necessario alterar o arquivo global do Komorebi.
+
+
+O popup usa os estilos nativos WS_POPUP e WS_EX_TOOLWINDOW, sem caption
+e sem item na barra de tarefas. Essa protecao nao depende do cliente CLI.
+Na verificacao local, o CLI do Komorebi retornou erro de socket 10022;
+a regra extra nao foi confirmada. O popup manteve o tamanho 360 x 520.
+
+TEMAS COM ESTILOS DIFERENTES
+Terminal hacker: moldura quadrada, grade, linhas de monitor, fonte de
+terminal e controles em formato de comandos. O botao > abre os ajustes.
+HUD futurista: moldura com recortes, aneis de mira, fonte monoespacada
+e controles de painel. Os dois tambem mudam o estilo do popup.
+Troque em clique direito > Tema. Os quatro temas anteriores continuam.
+
+
+ARCADE E EFEITOS
+Arcade retro: gabinete de fliperama, botao Jogar e contador de fases.
+Terminal hacker: linha de varredura suave. HUD: anel giratorio lento.
+Em configuracoes, Efeitos visuais liga/desliga as animacoes na hora.
+A preferencia e salva e nao altera o timer. Efeitos de temas ocultos param.
+
+
+AVISO NO MONITOR 2
+Ao concluir um foco, o gatinho aparece no canto inferior direito do monitor
+DISPLAY2 e pisca suavemente ate voce clicar nele. A pausa nao dispara esse
+aviso. O som continua seguindo sua preferencia. Nao toma o foco do teclado.
+Clique direito > Testar aviso no monitor 2 mostra uma previa sem mexer no timer.
+Se o monitor 2 estiver desconectado, o aviso aparece no monitor principal.
